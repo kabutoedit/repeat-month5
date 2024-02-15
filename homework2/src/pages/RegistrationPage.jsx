@@ -14,28 +14,20 @@ const RegistrationPage = () => {
 		dispatch({ type: 'NAME_VALUE', payload: nameValue })
 		dispatch({ type: 'EMAIL_VALUE', payload: emailValue })
 		dispatch({ type: 'PASSWORD_VALUE', payload: passwordValue })
-		const userData = {
-			name: nameValue,
-			// email: emailValue,
-			// password: passwordValue,
-		}
-		dispatch({ type: 'NAME_TITLE', payload: nameTitle })
-		dispatch({ type: 'EMAIL_TITLE', payload: emailTitle })
-		dispatch({ type: 'PASSWORD_TITLE', payload: passwordTitle })
+		dispatch({ type: 'NAME_TITLE', payload: nameValue })
+		dispatch({ type: 'EMAIL_TITLE', payload: emailValue })
+		dispatch({ type: 'PASSWORD_TITLE', payload: passwordValue })
+		dispatch({ type: 'CLEAR_INPUT' })
 	}
-
-	console.log(nameTitle, emailTitle, passwordTitle)
 
 	return (
 		<div>
 			<h2>Registration</h2>
-			<h2>{nameTitle}</h2>
-			<h2>{emailTitle}</h2>
-			<h2>{passwordTitle}</h2>
 			<div>
 				<input
 					type='text'
 					placeholder='name'
+					value={nameValue}
 					onChange={e =>
 						dispatch({ type: 'NAME_VALUE', payload: e.target.value })
 					}
@@ -43,6 +35,7 @@ const RegistrationPage = () => {
 				<input
 					type='email'
 					placeholder='email'
+					value={emailValue}
 					onChange={e =>
 						dispatch({ type: 'EMAIL_VALUE', payload: e.target.value })
 					}
@@ -50,14 +43,16 @@ const RegistrationPage = () => {
 				<input
 					type='password'
 					placeholder='password'
+					value={passwordValue}
 					onChange={e =>
 						dispatch({ type: 'PASSWORD_VALUE', payload: e.target.value })
 					}
 				/>
 				<button onClick={submit}>Submit</button>
-				<h3>{nameValue}</h3>
-				<h3>{emailValue}</h3>
-				<h3>{passwordValue}</h3>
+
+				<h3>Name:{nameTitle}</h3>
+				<h3>Email:{emailTitle}</h3>
+				<h3>Password:{passwordTitle}</h3>
 			</div>
 		</div>
 	)

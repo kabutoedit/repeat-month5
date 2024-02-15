@@ -2,9 +2,9 @@ const initialState = {
 	name: '',
 	email: '',
 	password: '',
-	titleName: 'old title',
-	titleEmail: 'old email',
-	titlePassword: 'old password',
+	titleName: '',
+	titleEmail: '',
+	titlePassword: '',
 }
 
 export const valueReducer = (state = initialState, action) => {
@@ -29,16 +29,23 @@ export const valueReducer = (state = initialState, action) => {
 				...state,
 				titleName: action.payload,
 			}
-    case 'EMAIL_TITLE':
-      return {
-        ...state,
-        titleEmail: action.payload,
-      }
-    case 'PASSWORD_TITLE':
-      return {
-        ...state,
-        titlePassword: action.payload,
-      }
+		case 'EMAIL_TITLE':
+			return {
+				...state,
+				titleEmail: action.payload,
+			}
+		case 'PASSWORD_TITLE':
+			return {
+				...state,
+				titlePassword: action.payload,
+			}
+      case 'CLEAR_INPUT':
+        return {
+          ...state,
+          name: '',
+          email: '',
+          password: '',
+        }
 		default:
 			return state
 	}

@@ -1,7 +1,7 @@
 export const nameValue = () => {
-  return {
-    type: 'NAME_VALUE'
-  }
+	return {
+		type: 'NAME_VALUE',
+	}
 }
 
 export const emailValue = () => {
@@ -17,19 +17,26 @@ export const passwordValue = () => {
 }
 
 export const nameTitle = () => {
-  return {
-    type: 'NAME_TITLE',
-  }
+	return {
+		type: 'NAME_TITLE',
+	}
 }
 
 export const emailTitle = () => {
-  return {
-    type: 'EMAIL_TITLE',
-  }
+	return {
+		type: 'EMAIL_TITLE',
+	}
 }
 
 export const passwordTitle = () => {
+	return {
+		type: 'PASSWORD_TITLE',
+	}
+}
+
+
+export const clearInput = () => {
   return {
-    type: 'PASSWORD_TITLE',
+    type: 'CLEAR_INPUT',
   }
 }
